@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color_primario: #8527c3fd;
+    --color_primario_suave: #8527c383;
+    --color_blanco: #fff;
+    --altura_header: 80px;
+    --padding_left_right: 2rem;
+    --ancho_maximo: 1200px;
+}
+.h2{
+    justify-content: center;
+}
+.header, .header1{
+    height: var(--altura_header);
+    background-color: var(--color_primario);
+}
+.navbar, .navbar1{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 var(--padding_left_right);
+    color: var(--color_blanco);
+}
+.info {
+    display: none;
+    margin-top: 10px;
+}
+/* Esta es la configuracion para la visualizacion del popover para cada plan*/
+.planA, .planB, .planC, .plan1, 
+.plan2, .plan3, .plan4{
+
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    height: var(--altura_header);
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn-parking, .btn-lavado{
+    background-color: var(--color_primario);
+    color: var(--color_blanco);
+    position: flex;
+    font-size: 1.6em;
+    width: 220px;
+    margin-top: 25px;
+    margin-left: 35%;
+    padding: 0 var(--padding_left_right);
+}

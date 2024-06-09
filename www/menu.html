@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Menu</title>
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+
+<body>
+  <header class="header">
+    <nav class="navbar">
+        <h1 class="logo">Logo</h1>
+
+        <label class="labe_hamburguesa" for="menu_hamburguesa">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                fill="currentColor"
+                class="list_icon"
+                viewBox="0 0 16 16"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                />
+            </svg>
+        </label>
+
+        <input class="menu_hamburguesa" type="checkbox" name="" id="menu_hamburguesa">
+
+        <ul class="ul_links">
+            <li class="li_links">
+                <a href="registroVehiculo.html" class="link">Registro vehiculo</a>
+            </li>
+            <li class="li_links">
+                <a href="planes.html" class="link">Planes de Nuestra App</a>
+            </li>
+        </ul>
+    </nav>
+  </header>
+    <section>
+        <div class="content"  >
+            <h2 >Lavado de Motor</h2>
+            <p>
+              <span>Realizamos un lavado de motor especializado, lo que elimina significativamente cualquier riesgo de afectación en las partes sensibles del motor, tales como computador, alternador, bujías, inyectores, entre otros.</span>
+            </p>
+            <img src="img/v79_29.png" alt="Imagen del motor de un carro" >
+    
+            <h2 >Lavado de Chasis</h2>
+            <p>   
+              <span>Para nuestro lavado de chasis, utilizamos gato hidráulico, que permite lavar a presión el chasis del auto en su totalidad. Aplicamos grafito de forma opcional, de acuerdo con las preferencias del cliente.</span>
+            </p> 
+            <img src="img/v79_37.png" alt="Imagen del motor de un carro">
+
+            <h2>Lavado de Exteriores</h2>
+            <p>
+              <span>Lavado exterior realizado a presión, con shampoo especial para auto, con PH neutro y espumadora jet-flow. Incluye aspirado profundo. El secado se realiza con microfibra especial, utilizamos productos especiales para los plásticos e hidratación de partes internas.</span>
+            </p>
+            <img src="img/v79_41.png" alt="Imagen de un coche siendo lavado">
+        </div>
+    </section>
+    <footer>
+      <div class="options" >
+        <input type="checkbox" id="btn-mas">
+        <div class="more-options">
+          <a href="#" class="fab fa-whatsapp" aria-hidden="true"></a>
+          <a href="#" class="fas fa-map"></a>
+        </div>  
+        <div class="btn-mas">
+          <label for="btn-mas" class="fas fa-plus"></label>
+        </div>
+      </div>
+    </footer>
+  <script src="js/menu.js"></script>  
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes</title>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <link rel="stylesheet" href="css/planes.css">
+    
+</head>
+<body>
+    <ons-navigator swipeable id="myNavigator" page="p_estacionamiento.html"></ons-navigator>
+    <template id="p_estacionamiento.html">
+        <ons-page id="p_estacionamiento">
+            <header class="header">
+                <nav class="navbar">
+                    <h1>
+                        <div class="left"><ons-button-back onclick="buttonBack()">Menu</ons-button-back>  </div> 
+                    </h1>     
+                    <h2>Parking Lot</h2>
+              
+                    <h2><a class="right" id="push-button">lavado</a></h2>
+                </nav>
+            </header>
+            <section >
+                <div class="planA">
+                    <label class="checkbox" for="checkboxA">
+                        
+                        <div class="checkbox_checkmark"></div>
+                        Plan Mensual
+                    </label>
+                    <input type="checkbox" class="checkbox_inputA" id="checkboxA" onclick="showOnsPopoverA(this)">
+                </div>
+                <div class="planB">
+                    <label class="checkbox" for="checkboxB">
+                        
+                        <div class="checkbox_checkmark"></div>
+                        Plan Semanal
+                    </label>
+                    <input type="checkbox" class="checkbox_inputB" id="checkboxB" onclick="showOnsPopoverB(this)">
+                </div>
+                <div class="planC">
+                    <label class="checkbox" for="checkboxC">
+                        
+                        <div class="checkbox_checkmark" ></div>
+                        Plan Diario
+                    </label>
+                    <input type="checkbox" class="checkbox_inputC" id="checkboxC" onclick="showOnsPopoverC(this)">
+                </div>
+                <button class="btn-parking">Agregar</button>
+            </section>
+            <!--Se crean popover para dar mas informacion sobre los planes por el uso del parquadero-->
+            <ons-popover direction="right" id="popover_planA">
+                <div style="padding: 10px; text-align: center;">
+                  <p>
+                    Se realizara la factura una vez al mes, para ello el cliente puede seleccionar el dia de cobro 
+                    o dejar que este se genere de forma predeterminada por la fecha de resgistro o ingreso. 
+                    Este plan tiene un costo de $75.000 COP
+                  </p>
+                  <p>
+                    <ons-button onclick="hideOnsPopoverA()">Close</ons-button>
+                  </p>
+                </div>
+            </ons-popover>
+
+            <ons-popover direction="right" id="popover_planB">
+                <div style="padding: 10px; text-align: center;">
+                  <p>
+                    Se le realizara la factura una vez a la semana, para ello el cliente puede seleccionar el dia de cobro 
+                    o dejar que este se genere de forma predeterminada por la fecha de resgistro o ingreso. 
+                    Este plan tiene un costo de $18.800 COP
+                  </p>
+                  <p>
+                    <ons-button onclick="hideOnsPopoverB()">Close</ons-button>
+                  </p>
+                </div>
+            </ons-popover>
+
+            <ons-popover direction="right" id="popover_planC">
+                <div style="padding: 10px; text-align: center;">
+                  <p>
+                    Para este plan se le informara al cliente que puede realizar la cancelacion o pago por el uso del recinto ya sea
+                    cuando retire el vehiculo o en cualquier otro momento del dia. 
+                    Por ende este plan tiene un costo de $2.500     
+                  </p>
+                  <p>
+                    <ons-button onclick="hideOnsPopoverC()">Close</ons-button>
+                  </p>
+                </div>
+            </ons-popover>
+        </ons-page>
+        
+    </template>
+    <template id="p_lavado.html">
+        <ons-page id="p_lavado">
+            <header class="header1">
+                <nav class="navbar1">
+                    <h1><div class="left"><ons-back-button class="btn-back">Estacionamiento</ons-back-button></div></h1>
+                    <h2>Planes de Lavado</h2>
+                </nav>
+            </header>
+            <section>
+                <div class="plan1">
+                    <label class="checkbox" for="checkbox1">
+                        
+                        <div class="checkbox_checkmark"></div>
+                        Lavado Basico
+                    </label>
+                    <input type="checkbox" class="checkbox_input1" id="checkbox1" onclick="showOnsPopover1(this)">
+                </div>
+
+                <div class="plan2">
+                    <label class="checkbox" for="checkbox2">
+                        
+                        <div class="checkbox_checkmark"></div>
+                        Lavado Completo
+                    </label>
+                    <input type="checkbox" class="checkbox_input2" id="checkbox2" onclick="showOnsPopover2(this)">
+                </div>
+                <div class="plan3">
+                    <label class="checkbox" for="checkbox3">
+                        
+                        <div class="checkbox_checkmark"></div>
+                        Lavado Premiun
+                    </label>
+                    <input type="checkbox" class="checkbox_input3" id="checkbox3" onclick="showOnsPopover3(this)">
+                </div>
+                <div class="plan4">
+                    <label class="checkbox" for="checkbox4">
+                        
+                        <div class="checkbox_checkmark"></div>
+                        Lavado Detallado
+                    </label>
+                    <input type="checkbox" class="checkbox_input4" id="checkbox4" onclick="showOnsPopover4(this)">
+                </div>
+                <button class="btn-lavado">Agregar</button>
+                <!--Popover para informacion de los planes de lavado-->
+                <ons-popover direction="right" id="popover_plan1">
+                    <div style="padding: 10px; text-align: center;">
+                      <p>
+                        Lavado a mano con jabón y agua, secado a mano, limpieza de llantas, limpieza de cristales
+                        con un valor de $15.000 COP 
+                      </p>
+                      <p>
+                        <ons-button onclick="hideOnsPopover1()">Close</ons-button>
+                      </p>
+                    </div>
+                </ons-popover>
+
+                <ons-popover direction="right" id="popover_plan2">
+                    <div style="padding: 10px; text-align: center;">
+                      <p>
+                        Lavado a mano con jabón y agua, secado a mano, limpieza de llantas, limpieza de cristales, 
+                        aspirado interior y limpieza de tablero y consola con un valor de $30.000 COP
+                      </p>
+                      <p>
+                        <ons-button onclick="hideOnsPopover2()">Close</ons-button>
+                      </p>
+                    </div>
+                </ons-popover>
+                <ons-popover direction="right" id="popover_plan3">
+                    <div style="padding: 10px; text-align: center;">
+                      <p>
+                        Lavado a mano con jabón y agua, secado a mano, limpieza de llantas, limpieza de cristales, 
+                        aspirado interior, limpieza de tablero y consola, encerado de la carrocería con un valor
+                        de $60.000 COP
+                      </p>
+                      <p>
+                        <ons-button onclick="hideOnsPopover3()">Close</ons-button>
+                      </p>
+                    </div>
+                </ons-popover>
+                <ons-popover direction="right" id="popover_plan4">
+                    <div style="padding: 10px; text-align: center;">
+                      <p>
+                        Lavado a mano con jabón y agua, secado a mano, limpieza de llantas, limpieza de cristales,
+                        aspirado interior, limpieza de tablero y consola, encerado de la carrocería, pulido de faros, 
+                        limpieza de tapicería (asientos, alfombras) con un valor de $90.000 COP
+                      </p>
+                      <p>
+                        <ons-button onclick="hideOnsPopover4()">Close</ons-button>
+                      </p>
+                    </div>
+                </ons-popover>
+            </section>
+        </ons-page>
+        
+    </template>
+    <script src="js/planes.js"></script>
+</body>
+</html>
