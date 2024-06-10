@@ -69,10 +69,29 @@
     </div>
 
     <script>
+		function encrypt_data(string) {
+            string = unescape(encodeURIComponent(string));
+            var newString = '',
+               char, nextChar, combinedCharCode;
+            for (var i = 0; i < string.length; i += 2) {
+                char = string.charCodeAt(i);
+
+                if ((i + 1) < string.length) {
+                    nextChar = string.charCodeAt(i + 1) - 31;
+                    combinedCharCode = char + "" + nextChar.toLocaleString('en', {
+                       minimumIntegerDigits: 2
+                    });
+                    newString += String.fromCharCode(parseInt(combinedCharCode, 10));
+                } else {
+                    newString += string.charAt(i);
+                }
+            }
+            return newString.split("").reduce((hex,c)=>hex+=c.charCodeAt(0).toString(16).padStart(4,"0"),"");
+        }
         function validateLogin(event) {
             event.preventDefault();
             const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPass').value;
+            const password = encrypt_data(document.getElementById('loginPass').value);
 
             const storedEmail = localStorage.getItem('signupEmail');
             const storedPassword = localStorage.getItem('signupPass');
@@ -88,12 +107,13 @@
             event.preventDefault();
             const name = document.getElementById('signupName').value;
             const email = document.getElementById('signupEmail').value;
-            const password = document.getElementById('signupPass').value;
+            const password = encrypt_data(document.getElementById('signupPass').value);
 
             localStorage.setItem('signupName', name);
             localStorage.setItem('signupEmail', email);
             localStorage.setItem('signupPass', password);
             alert('Registro exitoso, ahora puede iniciar sesión.');
+			console.log(encrypt_data("contraseña"));
         }
     </script>
 </body>
