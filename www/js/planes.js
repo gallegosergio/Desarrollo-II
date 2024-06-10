@@ -21,7 +21,19 @@ document.addEventListener('init', function(event) {
         }
       });
     });
-  });
+    const carwashCheckboxes = document.querySelectorAll('.plan1 input[type="checkbox"], .plan2 input[type="checkbox"], .plan3 input[type="checkbox"], .plan4 input[type="checkbox"]');
+    carwashCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function(event) {
+            if (event.target.checked) {
+                const planId = event.target.id.replace('checkbox', 'popover_');
+                document.getElementById(planId).show(event.target);
+            } else {
+                const planId = event.target.id.replace('checkbox', 'popover_');
+                document.getElementById(planId).hide();
+            }
+        });
+    });
+});
 /* */
 var showOnsPopoverA = function(target) {
   document
@@ -117,4 +129,8 @@ function validateInput(event) {
 function selectPlan(checkbox) {
   const parkingCheckboxes = document.querySelectorAll('.planA input[type="checkbox"], .planB input[type="checkbox"], .planC input[type="checkbox"]');
   parkingCheckboxes.forEach(box => box.checked = box === checkbox);
+}
+function selectPlanCarWash(checkbox) {
+  const carwashCheckboxes = document.querySelectorAll('.plan1 input[type="checkbox"], .plan2 input[type="checkbox"], .plan3 input[type="checkbox"], .plan4 input[type="checkbox"]');
+  carwashCheckboxes.forEach(box => box.checked = box === checkbox);
 }
