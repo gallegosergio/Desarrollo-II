@@ -127,3 +127,33 @@ function selectPlanCarWash(checkbox) {
   const carwashCheckboxes = document.querySelectorAll('.plan1 input[type="checkbox"], .plan2 input[type="checkbox"], .plan3 input[type="checkbox"], .plan4 input[type="checkbox"]');
   carwashCheckboxes.forEach(box => box.checked = box === checkbox);
 }
+function guardarPlanesEstacionamiento() {
+  // Obtener el estado de los checkboxes
+  var planMensual = document.querySelector('.checkbox_inputA').checked;
+  var planSemanal = document.querySelector('.checkbox_inputB').checked;
+  var planDiario = document.querySelector('.checkbox_inputC').checked;
+  const PplanMensual = 75000;
+  const PplanSemanal = 18800;
+  const PplanDiario = 2500;
+
+  // Crear un objeto con los planes de estacionamiento
+  var planes = {
+    mensual: {
+        seleccionado: planMensual,
+        precio: PplanMensual
+    },
+    semanal: {
+        seleccionado: planSemanal,
+        precio: PplanSemanal
+    },
+    diario: {
+        seleccionado: planDiario,
+        precio: PplanDiario
+    }
+};
+
+  // Guardar los planes en el localStorage
+  localStorage.setItem('planesEstacionamiento', JSON.stringify(planes));
+
+  console.log('Planes de estacionamiento guardados:', planes);
+}
