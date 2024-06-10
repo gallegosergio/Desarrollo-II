@@ -9,7 +9,19 @@ document.addEventListener('init', function(event) {
         document.querySelector('#myNavigator').pushPage('p_lavado.html');
       };
     }
-});
+    const parkingCheckboxes = document.querySelectorAll('.planA input[type="checkbox"], .planB input[type="checkbox"], .planC input[type="checkbox"]');
+    parkingCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function(event) {
+        if (event.target.checked) {
+          const planId = event.target.id.replace('checkbox', 'popover_');
+          document.getElementById(planId).show(event.target);
+        } else {
+          const planId = event.target.id.replace('checkbox', 'popover_');
+          document.getElementById(planId).hide();
+        }
+      });
+    });
+  });
 /* */
 var showOnsPopoverA = function(target) {
   document
@@ -102,3 +114,7 @@ function validateInput(event) {
       event.target.value = input.slice(0, -1);
   }
 };
+function selectPlan(checkbox) {
+  const parkingCheckboxes = document.querySelectorAll('.planA input[type="checkbox"], .planB input[type="checkbox"], .planC input[type="checkbox"]');
+  parkingCheckboxes.forEach(box => box.checked = box === checkbox);
+}
