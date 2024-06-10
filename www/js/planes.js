@@ -138,22 +138,94 @@ function guardarPlanesEstacionamiento() {
 
   // Crear un objeto con los planes de estacionamiento
   var planes = {
-    mensual: {
-        seleccionado: planMensual,
-        precio: PplanMensual
-    },
-    semanal: {
-        seleccionado: planSemanal,
-        precio: PplanSemanal
-    },
-    diario: {
-        seleccionado: planDiario,
-        precio: PplanDiario
-    }
-};
+      mensual: {
+          seleccionado: planMensual,
+          precio: PplanMensual
+      },
+      semanal: {
+          seleccionado: planSemanal,
+          precio: PplanSemanal
+      },
+      diario: {
+          seleccionado: planDiario,
+          precio: PplanDiario
+      }
+  };
 
   // Guardar los planes en el localStorage
   localStorage.setItem('planesEstacionamiento', JSON.stringify(planes));
 
-  console.log('Planes de estacionamiento guardados:', planes);
+  // Mostrar una alerta con el plan de estacionamiento seleccionado y su precio
+  var mensajeAlerta = "Plan de estacionamiento seleccionado:\n";
+  if (planMensual) {
+      mensajeAlerta += "- Plan Mensual: $" + PplanMensual + "\n";
+  }
+  if (planSemanal) {
+      mensajeAlerta += "- Plan Semanal: $" + PplanSemanal + "\n";
+  }
+  if (planDiario) {
+      mensajeAlerta += "- Plan Diario: $" + PplanDiario + "\n";
+  }
+  alert(mensajeAlerta);
 }
+
+function guardarPlanesLavado() {
+  // Obtener el estado de los checkboxes
+  var planBasico = document.querySelector('.checkbox_input1').checked;
+  var planCompleto = document.querySelector('.checkbox_input2').checked;
+  var planPremium = document.querySelector('.checkbox_input3').checked;
+  var planDetallado = document.querySelector('.checkbox_input4').checked;
+  
+  // Precios de los planes de lavado
+  const precioBasico = 15000;
+  const precioCompleto = 30000;
+  const precioPremium = 60000;
+  const precioDetallado = 90000;
+
+  // Obtener la hora y el día de recogida del vehículo
+  var horaRecogida = document.querySelector('.input_horaL').value;
+  var diaRecogida = document.querySelector('.input_dateL').value;
+
+  // Crear un objeto con los planes de lavado
+  var planesLavado = {
+      basico: {
+          seleccionado: planBasico,
+          precio: precioBasico
+      },
+      completo: {
+          seleccionado: planCompleto,
+          precio: precioCompleto
+      },
+      premium: {
+          seleccionado: planPremium,
+          precio: precioPremium
+      },
+      detallado: {
+          seleccionado: planDetallado,
+          precio: precioDetallado
+      }
+  };
+
+  // Guardar los planes de lavado en el localStorage
+  localStorage.setItem('planesLavado', JSON.stringify(planesLavado));
+
+  // Mostrar una alerta con los planes de lavado seleccionados y sus precios
+  var mensajeAlerta = "Planes de lavado seleccionados:\n";
+  if (planBasico) {
+      mensajeAlerta += "- Plan Básico: $" + precioBasico + "\n";
+  }
+  if (planCompleto) {
+      mensajeAlerta += "- Plan Completo: $" + precioCompleto + "\n";
+  }
+  if (planPremium) {
+      mensajeAlerta += "- Plan Premium: $" + precioPremium + "\n";
+  }
+  if (planDetallado) {
+      mensajeAlerta += "- Plan Detallado: $" + precioDetallado + "\n";
+  }
+  mensajeAlerta += "Su vehículo lo espera."+"\n";
+  mensajeAlerta += "Día de recogida: " + diaRecogida + "\n";
+  mensajeAlerta += "Hora de recogida: " + horaRecogida + "\n";
+  alert(mensajeAlerta);
+}
+
