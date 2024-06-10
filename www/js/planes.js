@@ -94,3 +94,11 @@ var hideOnsPopover4 = function() {
     .getElementById('popover_plan4')
     .hide();
 };
+/* */
+function validateInput(event) {
+  const input = event.target.value;
+  const validChars = /^[0-9/]*$/;
+  if (!validChars.test(input)) {
+      event.target.value = input.slice(0, -1);
+  }
+};

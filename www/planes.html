@@ -97,7 +97,7 @@
         <ons-page id="p_lavado">
             <header class="header1">
                 <nav class="navbar1">
-                    <h1><div class="left"><ons-back-button class="btn-back">Estacionamiento</ons-back-button></div></h1>
+                    <h1><div class="left"><ons-back-button class="btn-back"></ons-back-button></div></h1>
                     <h2>Planes de Lavado</h2>
                 </nav>
             </header>
@@ -135,6 +135,14 @@
                     </label>
                     <input type="checkbox" class="checkbox_input4" id="checkbox4" onclick="showOnsPopover4(this)">
                 </div>
+                <div class="input_date">
+                  <input type="number" class="input_dateL" required>
+                  <div class="dateL">Fecha (dd-mm-aaaa)</div>
+              </div>
+              <div class="input_hora">
+                <input type="number" class="input_horaL" required >
+                <div class="horaL">Hora (hh-mm)</div>
+            </div>
                 <button class="btn-lavado">Agregar</button>
                 <!--Popover para informacion de los planes de lavado-->
                 <ons-popover direction="down" id="popover_plan1">
@@ -160,6 +168,7 @@
                       </p>
                     </div>
                 </ons-popover>
+
                 <ons-popover direction="down" id="popover_plan3">
                     <div style="padding: 10px; text-align: center;">
                       <p>
@@ -172,6 +181,7 @@
                       </p>
                     </div>
                 </ons-popover>
+
                 <ons-popover direction="down" id="popover_plan4">
                     <div style="padding: 10px; text-align: center;">
                       <p>
