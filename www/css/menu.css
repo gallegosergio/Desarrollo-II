@@ -22,8 +22,8 @@ img{
 
                                 /*Hambuger menu*/
 :root {
-  --color_primario: #8527c3fd;
-  --color_primario_suave: #8527c383;
+  --color_primario: #1f2029;
+  --color_primario_suave: #C4C3CA;
   --color_blanco: #fff;
   --altura_header: 80px;
   --padding_left_right: 2rem;
@@ -63,7 +63,7 @@ ol,ul{
 }
 .ul_links {
   width: 100%;
-  background-color: var(--color_primario_suave);
+  background-color: var(--color_primario);
   position: absolute;
   top: var(--altura_header);
   left: 0;
@@ -103,7 +103,7 @@ ol,ul{
       padding: .2rem .7rem;
   }
   .link:hover{
-      background-color: #5f1192;
+      background-color: var(--color_primario_suave);
   }
 }
 

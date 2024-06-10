@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 :root {
-    --color_primario: #8527c3fd;
-    --color_primario_suave: #8527c383;
+    --color_primario: #1f2029;
+    --color_primario_suave: #C4C3CA;
     --color_blanco: #fff;
     --altura_header: 80px;
     --padding_left_right: 2rem;

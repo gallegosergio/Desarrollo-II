@@ -119,13 +119,6 @@ var hideOnsPopover4 = function() {
     .hide();
 };
 /* */
-function validateInput(event) {
-  const input = event.target.value;
-  const validChars = /^[0-9/]*$/;
-  if (!validChars.test(input)) {
-      event.target.value = input.slice(0, -1);
-  }
-};
 function selectPlan(checkbox) {
   const parkingCheckboxes = document.querySelectorAll('.planA input[type="checkbox"], .planB input[type="checkbox"], .planC input[type="checkbox"]');
   parkingCheckboxes.forEach(box => box.checked = box === checkbox);

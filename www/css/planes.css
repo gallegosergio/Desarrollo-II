@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 :root {
-    --color_primario: #8527c3fd;
-    --color_primario_suave: #8527c383;
+    --color_primario: #1f2029;
+    --color_primario_suave: #C4C3CA;
     --color_blanco: #fff;
     --altura_header: 80px;
     --padding_left_right: 2rem;
@@ -38,7 +38,7 @@
     font-size: 2em;
     font-weight: bold;
     display: flex;
-    height: var(--altura_header);
+    height: 20vh;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -51,7 +51,7 @@
     font-size: 1.6em;
     width: 220px;
     margin-top: 25px;
-    margin-left: 25%;
+    margin-left: 35%;
     padding: 0 var(--padding_left_right);
 }
 /**/
@@ -61,6 +61,7 @@
     height: 80px;
     line-height: 80px;
     margin-top: 40px;
+    margin-left: 30%;
     
 }
 .input_dateL, .input_horaL{

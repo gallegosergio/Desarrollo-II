@@ -30,7 +30,7 @@
                         
                         <div class="checkbox_checkmark"></div>
                         Plan Mensual
-                    </label>
+                    </label><br>
                     <input type="checkbox" class="checkbox_inputA" id="checkboxA" onclick="selectPlan(this);showOnsPopoverA(this)">
                 </div>
                 <div class="planB">
@@ -38,7 +38,7 @@
                         
                         <div class="checkbox_checkmark"></div>
                         Plan Semanal
-                    </label>
+                    </label><br>
                     <input type="checkbox" class="checkbox_inputB" id="checkboxB" onclick="selectPlan(this);showOnsPopoverB(this)">
                 </div>
                 <div class="planC">
@@ -46,13 +46,13 @@
                         
                         <div class="checkbox_checkmark" ></div>
                         Plan Diario
-                    </label>
+                    </label><br>
                     <input type="checkbox" class="checkbox_inputC" id="checkboxC" onclick="selectPlan(this);showOnsPopoverC(this)">
                 </div>
                 <button class="btn-parking">Agregar</button>
             </section>
             <!--Se crean popover para dar mas informacion sobre los planes por el uso del parquadero-->
-            <ons-popover direction="down" id="popover_planA">
+            <ons-popover direction="left" id="popover_planA">
                 <div style="padding: 10px; text-align: center;">
                   <p>
                     Se realizara la factura una vez al mes, para ello el cliente puede seleccionar el dia de cobro 
@@ -65,7 +65,7 @@
                 </div>
             </ons-popover>
 
-            <ons-popover direction="down" id="popover_planB">
+            <ons-popover direction="left" id="popover_planB">
                 <div style="padding: 10px; text-align: center;">
                   <p>
                     Se le realizara la factura una vez a la semana, para ello el cliente puede seleccionar el dia de cobro 
@@ -78,7 +78,7 @@
                 </div>
             </ons-popover>
 
-            <ons-popover direction="down" id="popover_planC">
+            <ons-popover direction="left" id="popover_planC">
                 <div style="padding: 10px; text-align: center;">
                   <p>
                     Para este plan se le informara al cliente que puede realizar la cancelacion o pago por el uso del recinto ya sea
@@ -107,7 +107,7 @@
                         
                         <div class="checkbox_checkmark"></div>
                         Lavado Basico
-                    </label>
+                    </label><br>
                     <input type="checkbox" class="checkbox_input1" id="checkbox1" onclick="selectPlanCarWash(this);showOnsPopover1(this)">
                 </div>
 
@@ -116,7 +116,7 @@
                         
                         <div class="checkbox_checkmark"></div>
                         Lavado Completo
-                    </label>
+                    </label><br>
                     <input type="checkbox" class="checkbox_input2" id="checkbox2" onclick="selectPlanCarWash(this);showOnsPopover2(this)">
                 </div>
                 <div class="plan3">
@@ -124,7 +124,7 @@
                         
                         <div class="checkbox_checkmark"></div>
                         Lavado Premiun
-                    </label>
+                    </label><br>
                     <input type="checkbox" class="checkbox_input3" id="checkbox3" onclick="selectPlanCarWash(this);showOnsPopover3(this)">
                 </div>
                 <div class="plan4">
@@ -132,15 +132,15 @@
                         
                         <div class="checkbox_checkmark"></div>
                         Lavado Detallado
-                    </label>
+                    </label><br>
                     <input type="checkbox" class="checkbox_input4" id="checkbox4" onclick="selectPlanCarWash(this);showOnsPopover4(this)">
                 </div>
                 <div class="input_date">
-                  <input type="number" class="input_dateL" required>
+                  <input type="date" class="input_dateL">
                   <div class="dateL">Fecha (dd-mm-aaaa)</div>
               </div>
               <div class="input_hora">
-                <input type="number" class="input_horaL" required >
+                <input type="time" class="input_horaL">
                 <div class="horaL">Hora (hh-mm)</div>
             </div>
                 <button class="btn-lavado">Agregar</button>
