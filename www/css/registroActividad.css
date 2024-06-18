@@ -1,0 +1,32 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+  --color_primario: #1f2029;
+  --color_primario_suave: #C4C3CA;
+  --color_blanco: #fff;
+  --altura_header: 80px;
+  --padding_left_right: 2rem;
+  --ancho_maximo: 1200px;
+}
+.btn-back{
+  margin-left: 0px;
+  padding: 0 var(--padding_left_right);
+  color: var(--color_blanco);
+}
+.header {
+    height: var(--altura_header);
+    background-color: var(--color_primario);
+}
+.navbar{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 var(--padding_left_right);
+    color: var(--color_blanco);
+}
