@@ -30,3 +30,15 @@
     padding: 0 var(--padding_left_right);
     color: var(--color_blanco);
 }
+.footer{
+    text-align: center;
+}
+.payment{
+    display: flex;
+    justify-content: inherit;
+    margin-left: 25%;
+}
+.section{
+    margin-top: 30px;
+    text-align: center;
+}
