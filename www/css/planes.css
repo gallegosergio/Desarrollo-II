@@ -1,25 +1,31 @@
-*{
+* {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
     --color_primario: #1f2029;
-    --color_primario_suave: #C4C3CA;
+    --color_primario_suave: #028dff;
     --color_blanco: #fff;
     --altura_header: 80px;
     --padding_left_right: 2rem;
     --ancho_maximo: 1200px;
 }
-.h2{
+
+.h2 {
     justify-content: center;
 }
-.header, .header1{
+
+.header,
+.header1 {
     height: var(--altura_header);
     background-color: var(--color_primario);
 }
-.navbar, .navbar1{
+
+.navbar,
+.navbar1 {
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -28,14 +34,71 @@
     padding: 0 var(--padding_left_right);
     color: var(--color_blanco);
 }
+
 .info {
     display: none;
     margin-top: 10px;
 }
-/* Esta es la configuracion para la visualizacion del popover para cada plan*/
-.planA, .planB, .planC, .plan1, 
-.plan2, .plan3, .plan4{
 
+/* Estilo personalizado para los checkboxes */
+.checkbox_inputA,
+.checkbox_inputB,
+.checkbox_inputC,
+.checkbox_input1,
+.checkbox_input2,
+.checkbox_input3,
+.checkbox_input4 {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 30px; /* Ancho del checkbox */
+    height: 30px; /* Altura del checkbox */
+    border: 2px solid var(--color_primario_suave); /* Borde del checkbox */
+    border-radius: 4px; /* Radio de borde */
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px; /* Margen entre el checkbox y el texto */
+}
+
+/* Estilo del visto en el checkbox */
+.checkbox_inputA::after,
+.checkbox_inputB::after,
+.checkbox_inputC::after,
+.checkbox_input1::after,
+.checkbox_input2::after,
+.checkbox_input3::after,
+.checkbox_input4::after {
+    content: '\2714'; /* Código Unicode para el símbolo de visto */
+    font-size: 1.2em; /* Tamaño del visto */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color_primario_suave); /* Color del visto */
+    display: none;
+}
+
+/* Mostrar el visto cuando el checkbox está marcado */
+.checkbox_inputA:checked::after,
+.checkbox_inputB:checked::after,
+.checkbox_inputC:checked::after,
+.checkbox_input1:checked::after,
+.checkbox_input2:checked::after,
+.checkbox_input3:checked::after,
+.checkbox_input4:checked::after {
+    display: block;
+}
+
+/* Esta es la configuración para la visualización del popover para cada plan */
+.planA,
+.planB,
+.planC,
+.plan1,
+.plan2,
+.plan3,
+.plan4 {
     font-size: 2em;
     font-weight: bold;
     display: flex;
@@ -45,7 +108,9 @@
     justify-content: center;
     align-items: center;
 }
-.btn-parking, .btn-lavado{
+
+.btn-parking,
+.btn-lavado {
     background-color: var(--color_primario);
     color: var(--color_blanco);
     position: flex;
@@ -55,17 +120,19 @@
     margin-left: 35%;
     padding: 0 var(--padding_left_right);
 }
-/**/
-.input_date, .input_hora{
+
+.input_date,
+.input_hora {
     width: 500px;
     position: relative;
     height: 80px;
     line-height: 80px;
     margin-top: 40px;
     margin-left: 10%;
-    
 }
-.input_dateL, .input_horaL{
+
+.input_dateL,
+.input_horaL {
     position: absolute;
     width: 70%;
     outline: none;
@@ -78,7 +145,9 @@
     transition: 0.1s ease;
     z-index: 1111;
 }
-.dateL, .horaL{
+
+.dateL,
+.horaL {
     position: absolute;
     font-size: 1.6em;
     color: #0f0000;
@@ -87,16 +156,21 @@
     background-color: #f1f0f0;
     transition: 0.2s ease;
 }
-.input_dateL:focus, input:valid{
+
+.input_dateL:focus,
+input:valid {
     color: var(--color_primario);
     border: 4px solid var(--color_primario);
 }
-.input_horaL:focus, input:valid{
+
+.input_horaL:focus,
+input:valid {
     color: var(--color_primario);
     border: 4px solid var(--color_primario);
 }
-.input_dateL:focus + .dateL, 
-.input_dateL:valid + .dateL{
+
+.input_dateL:focus + .dateL,
+.input_dateL:valid + .dateL {
     color: var(--color_primario);
     height: 30px;
     line-height: 30px;
@@ -104,8 +178,9 @@
     transform: translate(-15px, -16px) scale(0.88);
     z-index: 1111;
 }
-.input_horaL:focus + .horaL, 
-.input_horaL:valid + .horaL{
+
+.input_horaL:focus + .horaL,
+.input_horaL:valid + .horaL {
     color: var(--color_primario);
     height: 30px;
     line-height: 30px;
@@ -113,4 +188,3 @@
     transform: translate(-15px, -16px) scale(0.88);
     z-index: 1111;
 }
-/**/
