@@ -132,6 +132,13 @@ function guardarPlanesEstacionamiento() {
   var planMensual = document.querySelector('.checkbox_inputA').checked;
   var planSemanal = document.querySelector('.checkbox_inputB').checked;
   var planDiario = document.querySelector('.checkbox_inputC').checked;
+
+    // Validar que al menos un plan esté seleccionado
+    if (!planMensual && !planSemanal && !planDiario) {
+      alert("Seleccione al menos un plan de estacionamiento antes de agregar.");
+      return; // Detener la ejecución si no hay ningún plan seleccionado
+  }
+
   const PplanMensual = 75000;
   const PplanSemanal = 18800;
   const PplanDiario = 2500;
@@ -175,6 +182,12 @@ function guardarPlanesLavado() {
   var planCompleto = document.querySelector('.checkbox_input2').checked;
   var planPremium = document.querySelector('.checkbox_input3').checked;
   var planDetallado = document.querySelector('.checkbox_input4').checked;
+
+      // Validar que al menos un plan esté seleccionado
+      if (!planBasico && !planCompleto && !planPremium && !planDetallado) {
+        alert("Seleccione al menos un plan de lavado antes de agregar.");
+        return; // Detener la ejecución si no hay ningún plan seleccionado
+    }
   
   // Precios de los planes de lavado
   const precioBasico = 15000;
